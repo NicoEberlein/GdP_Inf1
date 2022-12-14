@@ -16,8 +16,8 @@ public class ReadWrite{
 		FileWriter fw = null;
 
 		try{
-			fr = new FileReader("in.txt");
-			fw = new FileWriter("out.txt");
+			fr = new FileReader("files/in.txt");
+			fw = new FileWriter("files/out.txt");
 
 
 			int n = fr.read();

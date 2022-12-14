@@ -21,9 +21,9 @@ public class Main {
 		);
 		
 		ObjectDeSerializer ser = new ObjectDeSerializer();
-		//ser.writeObjectToFile("test.txt", kraftfahrzeug);
+		//ser.writeObjectToFile("files/test.txt", kraftfahrzeug);
 		
-		/*Object obj = ser.readObjectFromFile("test.txt");
+		/*Object obj = ser.readObjectFromFile("files/test.txt");
 		Kraftfahrzeug k = (Kraftfahrzeug) obj;
 		System.out.println(k.getAntrieb().getLeistung());
 		System.out.println(k.getAntrieb().getAntriebsart());*/

@@ -16,7 +16,7 @@ public class Primzahlfinder{
 		PrintWriter writer = null;
 
 		try{
-			writer = new PrintWriter("test.txt");
+			writer = new PrintWriter("files/test.txt");
 
 			writer.println("2");
 

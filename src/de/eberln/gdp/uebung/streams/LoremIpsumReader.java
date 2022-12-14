@@ -15,7 +15,7 @@ public class LoremIpsumReader {
 			
 			String fileContent = "";
 			fr = new FileReader(filePath);
-			fw = new FileWriter("lorem_neu.txt");
+			fw = new FileWriter("files/lorem_neu.txt");
 			
 			while(fr.ready()) {
 				fileContent = fileContent + ((char)fr.read());

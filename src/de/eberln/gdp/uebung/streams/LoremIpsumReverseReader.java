@@ -11,7 +11,7 @@ public class LoremIpsumReverseReader {
 		
 		try {
 			RandomAccessFile randomAccessFile = new RandomAccessFile(new File(filePath), "r");
-			FileOutputStream fw = new FileOutputStream("lorem_rueckwaerts.txt");
+			FileOutputStream fw = new FileOutputStream("files/lorem_rueckwaerts.txt");
 			
 			for(long i=randomAccessFile.length();i>0;i--) {
 				
