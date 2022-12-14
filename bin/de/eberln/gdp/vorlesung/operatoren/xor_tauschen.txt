@@ -1,0 +1,8 @@
+So können zwei Variablen ohne dritte temp-Variable getauscht werden:
+
+a: 1100
+b: 1010
+
+a = a xor b = 0110
+b = a xor b = 1100
+a = a xor b = 1010
