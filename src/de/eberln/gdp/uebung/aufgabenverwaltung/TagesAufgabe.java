@@ -25,6 +25,7 @@ public class TagesAufgabe extends Aufgabe{
 	public void setDatum(Datum datum) {
 		this.datum = datum;
 	}
+
 	
 	
 	

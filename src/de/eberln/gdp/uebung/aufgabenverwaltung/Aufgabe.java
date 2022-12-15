@@ -1,6 +1,6 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public abstract class Aufgabe {
+public abstract class Aufgabe implements Vergleichbar{
 
 	private String titel;
 	
@@ -20,6 +20,10 @@ public abstract class Aufgabe {
 
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
+	}
+	
+	public int vergleiche(Aufgabe aufgabe) {
+		return this.beschreibung().compareTo(aufgabe.beschreibung());
 	}
 	
 	
