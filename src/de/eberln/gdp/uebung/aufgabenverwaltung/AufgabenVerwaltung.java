@@ -73,7 +73,7 @@ public class AufgabenVerwaltung {
 			}else if(prioritaetString.equalsIgnoreCase("DRINGEND")) {
 				prioritaet = Prioritaet.DRINGEND;
 			}else {
-				return;
+				errorDrucken();
 			}
 			
 			Datum datum = datumEinlesen();
@@ -107,14 +107,22 @@ public class AufgabenVerwaltung {
 			}
 			
 		}
-		
-		hauptmenue();
 
 	}
 	
 	protected void suchenMenue() {
-		System.out.println("Suchen");
-		hauptmenue();
+		System.out.println("Suchbegriff:");
+		String suchbegriff = eingabeEinlesen();
+		
+		for(Aufgabe aufgabe : aufgaben) {
+			if(aufgabe != null) {
+			
+				if(aufgabe.titel().contains(suchbegriff) || aufgabe.beschreibung().contains(suchbegriff)) {
+					System.out.println(aufgabe);
+				}
+				
+			}
+		}
 	}
 	
 	private String eingabeEinlesen() {
@@ -126,15 +134,14 @@ public class AufgabenVerwaltung {
 	
 	private Datum datumEinlesen() {
 		
-		System.out.println("Bitte geben Sie ein Datum in der Form dd.MM.yyyy an");
-		String[] datumStringArray = eingabeEinlesen().split(".");
+		System.out.println("Bitte geben Sie ein Datum in der Form dd_MM_yyyy an");
+		String[] datumStringArray = eingabeEinlesen().split("_");
 		return new Datum(Integer.parseInt(datumStringArray[0]), Integer.parseInt(datumStringArray[1]), Integer.parseInt(datumStringArray[2]));
 		
 	}
 	
 	private void errorDrucken() {
 		System.out.println("Ungueltige Eingabe");
-		hauptmenue();
 	}
 	
 	private void appendAufgabe(Aufgabe aufgabe) {
