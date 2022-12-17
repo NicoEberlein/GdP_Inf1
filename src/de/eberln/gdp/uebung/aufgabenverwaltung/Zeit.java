@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class Zeit {
+import java.io.Serializable;
+
+public class Zeit implements Serializable{
 
 	private int minute;
 	private int stunde;

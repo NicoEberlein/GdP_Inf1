@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class TagesAufgabe extends Aufgabe{
+import java.io.Serializable;
+
+public class TagesAufgabe extends Aufgabe implements Serializable{
 
 	private Datum datum;
 

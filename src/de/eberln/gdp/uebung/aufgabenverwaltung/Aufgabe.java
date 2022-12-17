@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public abstract class Aufgabe implements Vergleichbar{
+import java.io.Serializable;
+
+public abstract class Aufgabe implements Serializable, Vergleichbar{
 
 	private String titel;
 	

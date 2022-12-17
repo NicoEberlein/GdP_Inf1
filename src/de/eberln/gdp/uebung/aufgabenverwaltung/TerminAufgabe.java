@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class TerminAufgabe extends Aufgabe{
+import java.io.Serializable;
+
+public class TerminAufgabe extends Aufgabe implements Serializable{
 	
 	private Prioritaet prioritaet;
 	

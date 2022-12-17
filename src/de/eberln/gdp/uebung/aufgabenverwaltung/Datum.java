@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class Datum {
+import java.io.Serializable;
+
+public class Datum implements Serializable{
 
 	private int tag;
 	private int monat;

@@ -1,6 +1,8 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class DatumZeit {
+import java.io.Serializable;
+
+public class DatumZeit implements Serializable{
 
 	private Datum datum;
 	private Zeit zeit;
