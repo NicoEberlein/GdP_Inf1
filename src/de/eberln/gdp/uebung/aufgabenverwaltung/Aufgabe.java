@@ -31,6 +31,11 @@ public abstract class Aufgabe implements Vergleichbar{
 		return this.titel().compareTo(aufgabe.titel());
 	}
 	
+	@Override
+	public String toString() {
+		return titel + ": " + beschreibung;
+	}
+	
 	
 	
 }
