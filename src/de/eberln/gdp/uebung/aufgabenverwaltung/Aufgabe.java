@@ -6,6 +6,11 @@ public abstract class Aufgabe implements Vergleichbar{
 	
 	private String beschreibung;
 
+	protected Aufgabe(String titel, String beschreibung) {
+		this.titel = titel;
+		this.beschreibung = beschreibung;
+	}
+	
 	public String titel() {
 		return titel;
 	}
@@ -23,7 +28,7 @@ public abstract class Aufgabe implements Vergleichbar{
 	}
 	
 	public int vergleiche(Aufgabe aufgabe) {
-		return this.beschreibung().compareTo(aufgabe.beschreibung());
+		return this.titel().compareTo(aufgabe.titel());
 	}
 	
 	

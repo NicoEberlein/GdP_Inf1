@@ -3,6 +3,7 @@ package de.eberln.gdp;
 import java.math.BigInteger;
 import java.util.Arrays;
 
+import de.eberln.gdp.uebung.aufgabenverwaltung.AufgabenVerwaltung;
 import de.eberln.gdp.uebung.kontrollstrukturen.GrossesEinmaleins;
 import de.eberln.gdp.uebung.kontrollstrukturen.NullstellenRechner;
 import de.eberln.gdp.uebung.kontrollstrukturen.Schokoladenpreis;
@@ -53,7 +54,10 @@ public class Main {
 //		System.out.println(Arrays.toString(nullstellenRechner.nullstellenBerechnen(0, 0, 5)));	
 		
 //		GrossesEinmaleins.printGrossesEinmaleins();
-		System.out.println(new Wurzelrechnung().sqrt(81, 100));
+		//System.out.println(new Wurzelrechnung().sqrt(81, 100));
+		
+		AufgabenVerwaltung aufgabenVerwaltung = new AufgabenVerwaltung();
+		aufgabenVerwaltung.hauptmenue();
 	}
 	
 }

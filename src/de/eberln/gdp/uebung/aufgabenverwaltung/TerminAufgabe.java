@@ -1,7 +1,7 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-public class TerminAufgabe {
-
+public class TerminAufgabe extends Aufgabe{
+	
 	private Prioritaet prioritaet;
 	
 	private DatumZeit alarm;
@@ -10,6 +10,12 @@ public class TerminAufgabe {
 		NORMAL,
 		WICHTIG,
 		DRINGEND
+	}
+	
+	public TerminAufgabe(String titel, String beschreibung, Prioritaet prioritaet, DatumZeit datumZeit) {
+		super(titel, beschreibung);
+		this.prioritaet = prioritaet;
+		this.alarm = datumZeit;
 	}
 	
 	public Prioritaet prioritaet() {
