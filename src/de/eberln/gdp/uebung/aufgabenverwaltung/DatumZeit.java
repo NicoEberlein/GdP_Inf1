@@ -41,5 +41,22 @@ public class DatumZeit {
 	public int getMinute() {
 		return zeit.getMinute();
 	}
+
+	public Datum getDatum() {
+		return datum;
+	}
+
+	public void setDatum(Datum datum) {
+		this.datum = datum;
+	}
+
+	public Zeit getZeit() {
+		return zeit;
+	}
+
+	public void setZeit(Zeit zeit) {
+		this.zeit = zeit;
+	}
+	
 	
 }

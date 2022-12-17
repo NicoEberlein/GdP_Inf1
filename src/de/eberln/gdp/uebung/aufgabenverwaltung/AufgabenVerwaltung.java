@@ -54,9 +54,7 @@ public class AufgabenVerwaltung {
 		String eingabe = eingabeEinlesen();
 		
 		if(eingabe.equals("1")) {
-			System.out.println("Bitte geben Sie ein Datum in der Form dd:MM:yyyy an");
-			String[] datumStringArray = eingabeEinlesen().split(":");
-			Datum datum = new Datum(Integer.parseInt(datumStringArray[0]), Integer.parseInt(datumStringArray[1]), Integer.parseInt(datumStringArray[2]));
+			Datum datum = datumEinlesen();
 			
 			TagesAufgabe tagesAufgabe = new TagesAufgabe(titel, beschreibung, datum);
 			
@@ -78,9 +76,7 @@ public class AufgabenVerwaltung {
 				return;
 			}
 			
-			System.out.println("Bitte geben Sie ein Datum in der Form dd:MM:yyyy an");
-			String[] datumStringArray = eingabeEinlesen().split(":");
-			Datum datum = new Datum(Integer.parseInt(datumStringArray[0]), Integer.parseInt(datumStringArray[1]), Integer.parseInt(datumStringArray[2]));
+			Datum datum = datumEinlesen();
 			
 			System.out.println("Bitte geben Sie eine Zeit in der Form hh:mm an");
 			String[] zeitStringArray = eingabeEinlesen().split(":");
@@ -102,7 +98,11 @@ public class AufgabenVerwaltung {
 		
 			for(Aufgabe aufgabe : aufgaben) {
 				if(aufgabe != null) {
-					System.out.println(aufgabe);
+					if(aufgabe instanceof TerminAufgabe) {
+						System.out.println(((TerminAufgabe) aufgabe));
+					}else if(aufgabe instanceof TagesAufgabe) {
+						System.out.println(((TagesAufgabe) aufgabe));
+					}
 				}	
 			}
 			
@@ -121,6 +121,14 @@ public class AufgabenVerwaltung {
 		
 		Scanner scanner = new Scanner(System.in);
 		return scanner.nextLine();
+		
+	}
+	
+	private Datum datumEinlesen() {
+		
+		System.out.println("Bitte geben Sie ein Datum in der Form dd.MM.yyyy an");
+		String[] datumStringArray = eingabeEinlesen().split(".");
+		return new Datum(Integer.parseInt(datumStringArray[0]), Integer.parseInt(datumStringArray[1]), Integer.parseInt(datumStringArray[2]));
 		
 	}
 	

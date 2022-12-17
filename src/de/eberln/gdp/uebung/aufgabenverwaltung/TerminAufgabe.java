@@ -22,5 +22,11 @@ public class TerminAufgabe extends Aufgabe{
 		return prioritaet;
 	}
 	
+	@Override
+	public String toString() {
+		return super.titel() + ": " + super.beschreibung() + " am " + alarm.getDatum() + " mit der Priorität " + prioritaet;
+	}
+
+	
 	
 }

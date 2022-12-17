@@ -36,6 +36,11 @@ public class Datum {
 		this.jahr = jahr;
 	}
 	
+	@Override
+	public String toString() {
+		return tag + "." + monat + "." + jahr;
+	}
+	
 	
 	
 }

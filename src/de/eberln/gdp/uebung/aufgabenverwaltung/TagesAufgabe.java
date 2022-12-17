@@ -30,6 +30,11 @@ public class TagesAufgabe extends Aufgabe{
 	public void setDatum(Datum datum) {
 		this.datum = datum;
 	}
+	
+	@Override
+	public String toString() {
+		return super.titel() + ": " + super.beschreibung() + " am " + datum;
+	}
 
 	
 	
