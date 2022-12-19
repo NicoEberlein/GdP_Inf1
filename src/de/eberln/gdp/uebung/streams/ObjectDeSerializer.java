@@ -1,55 +1,63 @@
+/*
+ * @author: neberlein
+ */
+
 package de.eberln.gdp.uebung.streams;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 
 public class ObjectDeSerializer {
-
-	public ObjectDeSerializer() {
-		
-	}
 	
-	public Object readObjectFromFile(String filePath) {
+	public Object readObjectFromFile(File file) {
 		
 		ObjectInputStream objectInputStream = null;
 		
 		try{
 			
-			objectInputStream = new ObjectInputStream(new FileInputStream(filePath));
+			objectInputStream = new ObjectInputStream(new FileInputStream(file));
 		
 			Object obj = objectInputStream.readObject();
 			
 			return obj;
 			
-		}catch (Exception e) {
+		}catch(FileNotFoundException e) {
+			System.out.println("Es wurde keine File unter dem Pfad " + file.getAbsolutePath() + " gefunden");
+			return null;
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		}catch(IOException e) {
 			e.printStackTrace();
 			return null;
 		}finally {
 			try {
-				objectInputStream.close();	
-			}catch (Exception e) {
+				if(objectInputStream != null) objectInputStream.close();
+			}catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-		
+			
 	}
 	
-	public void writeObjectToFile(String filePath, Object object) {
+	
+	
+	public void writeObjectToFile(File file, Serializable object) {
 		
 		ObjectOutputStream objectOutputStream = null;
 		
 		try {
 		
-			objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath));
+			objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
 			objectOutputStream.writeObject(object);
 
 			
@@ -59,7 +67,7 @@ public class ObjectDeSerializer {
 			
 		}finally {
 			try {
-				objectOutputStream.close();
+				if(objectOutputStream != null) objectOutputStream.close();
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
@@ -67,7 +75,7 @@ public class ObjectDeSerializer {
 		
 	}
 	
-	public Object deepCopy(Object oldObj) {
+	public Object deepCopy(Serializable objectToCopy) {
 		
 		ByteArrayOutputStream byteArrayOutputStream = null;
 		ObjectOutputStream objectOutputStream = null;
@@ -79,7 +87,7 @@ public class ObjectDeSerializer {
 			byteArrayOutputStream = new ByteArrayOutputStream();
 			objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
 			
-			objectOutputStream.writeObject(oldObj);
+			objectOutputStream.writeObject(objectToCopy);
 			objectOutputStream.flush();
 			
 			
@@ -96,9 +104,9 @@ public class ObjectDeSerializer {
 			
 			try {
 			
-				byteArrayOutputStream.close();
-				objectInputStream.close();
-				objectOutputStream.close();
+				if(byteArrayOutputStream != null) byteArrayOutputStream.close();
+				if(objectInputStream != null) objectInputStream.close();
+				if(objectOutputStream != null) objectOutputStream.close();
 			
 			}catch(IOException e) {
 			
@@ -107,15 +115,6 @@ public class ObjectDeSerializer {
 			}
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 	

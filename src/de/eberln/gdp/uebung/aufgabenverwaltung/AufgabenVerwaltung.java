@@ -1,23 +1,24 @@
 package de.eberln.gdp.uebung.aufgabenverwaltung;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.File;
 import java.util.Scanner;
 
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
+import de.eberln.gdp.uebung.streams.ObjectDeSerializer;
 
 public class AufgabenVerwaltung {
 
 	private Aufgabe[] aufgaben;
 	private int currentIndex = 0;
 	
+	private final String persistentFile = "files/aufgaben_persistent.txt";
+	private ObjectDeSerializer objectDeSerializer;
+	
 	public AufgabenVerwaltung() {
 		
-		Aufgabe[] gespeicherteAufgaben = getPersistierteAufgaben();
+		objectDeSerializer = new ObjectDeSerializer();
+		
+		Aufgabe[] gespeicherteAufgaben = (Aufgabe[]) objectDeSerializer.readObjectFromFile(new File(persistentFile));
 		
 		if(gespeicherteAufgaben != null) {
 			
@@ -57,7 +58,7 @@ public class AufgabenVerwaltung {
 			}else if(eingabe.equals("3")) {
 				suchenMenue();
 			}else if(eingabe.equals("4")) {
-				persistieren();
+				objectDeSerializer.writeObjectToFile(new File(persistentFile), aufgaben);
 				abbruch = true;
 			}else if(eingabe.equals("5")) {
 				System.out.println("Programm wird beendet");
@@ -173,58 +174,6 @@ public class AufgabenVerwaltung {
 	private void appendAufgabe(Aufgabe aufgabe) {
 		aufgaben[currentIndex] = aufgabe;
 		currentIndex++;
-	}
-	
-	private void persistieren() {
-		
-		ObjectOutputStream objectOutputStream = null;
-		
-		try {
-			objectOutputStream = new ObjectOutputStream(new FileOutputStream("files/aufgaben_persistent.txt"));
-			
-			objectOutputStream.writeObject(aufgaben);
-			objectOutputStream.flush();
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}finally {
-			if(objectOutputStream != null) {
-				try {
-					objectOutputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-		
-	}
-	
-	private Aufgabe[] getPersistierteAufgaben() {
-		
-		ObjectInputStream objectInputStream = null;
-		Object obj = null;
-		
-		try {
-			objectInputStream = new ObjectInputStream(new FileInputStream("files/aufgaben_persistent.txt"));
-			obj = objectInputStream.readObject();
-			
-		} catch(FileNotFoundException e) {
-			return null;
-		} catch( IOException | ClassNotFoundException e) { 
-			e.printStackTrace();
-		} finally {
-			try {
-				if(objectInputStream != null) objectInputStream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		return (Aufgabe[]) obj;
-		
 	}
 	
 	
