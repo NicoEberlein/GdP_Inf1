@@ -16,7 +16,7 @@ import de.eberln.gdp.uebung.operatoren.Schaltjahrrechner;
 import de.eberln.gdp.uebung.operatoren.Temperaturumrechner;
 import de.eberln.gdp.uebung.streams.LoremIpsumReader;
 import de.eberln.gdp.uebung.streams.LoremIpsumReverseReader;
-import de.eberln.gdp.uebung.streams.ObjectDeSerializer;
+import de.eberln.gdp.vorlagen.ObjectDeSerializer;
 
 public class Main {
 

@@ -2,7 +2,7 @@
  * @author: neberlein
  */
 
-package de.eberln.gdp.uebung.streams;
+package de.eberln.gdp.vorlagen;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Scanner;
 
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
-import de.eberln.gdp.uebung.streams.ObjectDeSerializer;
+import de.eberln.gdp.vorlagen.ObjectDeSerializer;
 
 public class AufgabenVerwaltung {
 
@@ -43,6 +43,7 @@ public class AufgabenVerwaltung {
 		boolean abbruch = false;
 		
 		while(!abbruch) {
+			System.out.println("==============================");
 			System.out.println("Bitte waehlen Sie eine Option:");
 			System.out.println("(1) Neue Aufgabe erstellen");
 			System.out.println("(2) Alle Aufgaben drucken");
