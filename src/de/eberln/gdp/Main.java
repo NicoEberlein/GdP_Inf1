@@ -1,22 +1,11 @@
 package de.eberln.gdp;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 
-import de.eberln.gdp.uebung.aufgabenverwaltung.AufgabenVerwaltung;
-import de.eberln.gdp.uebung.kontrollstrukturen.GrossesEinmaleins;
-import de.eberln.gdp.uebung.kontrollstrukturen.NullstellenRechner;
-import de.eberln.gdp.uebung.kontrollstrukturen.Schokoladenpreis;
-import de.eberln.gdp.uebung.kontrollstrukturen.Wurzelrechnung;
-import de.eberln.gdp.uebung.kraftfahrzeug.Antrieb;
-import de.eberln.gdp.uebung.kraftfahrzeug.Geschwindigkeit;
-import de.eberln.gdp.uebung.kraftfahrzeug.Gewicht;
-import de.eberln.gdp.uebung.kraftfahrzeug.Kraftfahrzeug;
-import de.eberln.gdp.uebung.operatoren.Schaltjahrrechner;
-import de.eberln.gdp.uebung.operatoren.Temperaturumrechner;
-import de.eberln.gdp.uebung.streams.LoremIpsumReader;
-import de.eberln.gdp.uebung.streams.LoremIpsumReverseReader;
-import de.eberln.gdp.vorlagen.ObjectDeSerializer;
+import de.eberln.gdp.uebung.aufgabenverwaltung.DatumZeit;
+import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe;
+import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
+import de.eberln.gdp.vorlagen.GenericArray;
 
 public class Main {
 
@@ -56,8 +45,11 @@ public class Main {
 //		GrossesEinmaleins.printGrossesEinmaleins();
 		//System.out.println(new Wurzelrechnung().sqrt(81, 100));
 		
-		AufgabenVerwaltung aufgabenVerwaltung = new AufgabenVerwaltung();
-		aufgabenVerwaltung.hauptmenue();
+		//TerminAufgabe terminAufgabe = new TerminAufgabe("Hallo", "ihr Wixer", Prioritaet.DRINGEND, new DatumZeit());
+		String[] s = new String[]{"a", "b", "c"};
+		String[] b = GenericArray.appendToArray(s, "d");
+		b = GenericArray.appendToArray(b, "dsigsf");
+		System.out.println(Arrays.toString(b));
 	}
 	
 }
