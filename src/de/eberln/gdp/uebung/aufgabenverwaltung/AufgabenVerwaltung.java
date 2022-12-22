@@ -135,7 +135,6 @@ public class AufgabenVerwaltung {
 			}
 			
 		}
-
 	}
 	
 	protected void suchenMenue() {
@@ -162,8 +161,8 @@ public class AufgabenVerwaltung {
 	
 	private Datum datumEinlesen() {
 		
-		System.out.println("Bitte geben Sie ein Datum in der Form dd_MM_yyyy an");
-		String[] datumStringArray = eingabeEinlesen().split("_");
+		System.out.println("Bitte geben Sie ein Datum in der Form dd.MM.yyyy an");
+		String[] datumStringArray = eingabeEinlesen().split("\\.");
 		return new Datum(Integer.parseInt(datumStringArray[0]), Integer.parseInt(datumStringArray[1]), Integer.parseInt(datumStringArray[2]));
 		
 	}
