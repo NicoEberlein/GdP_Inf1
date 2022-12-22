@@ -25,26 +25,28 @@ public class ObjectDeSerializer {
 		try{
 			
 			objectInputStream = new ObjectInputStream(new FileInputStream(file));
-		
+	
 			Object obj = objectInputStream.readObject();
-			
 			return obj;
 			
 		}catch(FileNotFoundException e) {
+			
 			System.out.println("Es wurde keine File unter dem Pfad " + file.getAbsolutePath() + " gefunden");
 			return null;
-		}catch(ClassNotFoundException e) {
+		
+		}catch(ClassNotFoundException | IOException e) {
+			
 			e.printStackTrace();
 			return null;
-		}catch(IOException e) {
-			e.printStackTrace();
-			return null;
+			
 		}finally {
+			
 			try {
 				if(objectInputStream != null) objectInputStream.close();
 			}catch (IOException e) {
 				e.printStackTrace();
 			}
+			
 		}
 			
 	}
@@ -66,52 +68,11 @@ public class ObjectDeSerializer {
 			e.printStackTrace();
 			
 		}finally {
+		
 			try {
 				if(objectOutputStream != null) objectOutputStream.close();
 			}catch(IOException e) {
 				e.printStackTrace();
-			}
-		}
-		
-	}
-	
-	public Object deepCopy(Serializable objectToCopy) {
-		
-		ByteArrayOutputStream byteArrayOutputStream = null;
-		ObjectOutputStream objectOutputStream = null;
-		
-		ObjectInputStream objectInputStream = null;
-		
-		try {
-			
-			byteArrayOutputStream = new ByteArrayOutputStream();
-			objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
-			
-			objectOutputStream.writeObject(objectToCopy);
-			objectOutputStream.flush();
-			
-			
-			objectInputStream = new ObjectInputStream(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()));
-			
-			return objectInputStream.readObject();
-			
-		}catch(IOException | ClassNotFoundException e) {
-			
-			e.printStackTrace();
-			return null;
-			
-		}finally {
-			
-			try {
-			
-				if(byteArrayOutputStream != null) byteArrayOutputStream.close();
-				if(objectInputStream != null) objectInputStream.close();
-				if(objectOutputStream != null) objectOutputStream.close();
-			
-			}catch(IOException e) {
-			
-				e.printStackTrace();
-			
 			}
 			
 		}
