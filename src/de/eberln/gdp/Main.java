@@ -5,7 +5,11 @@ import java.util.Arrays;
 import de.eberln.gdp.uebung.aufgabenverwaltung.DatumZeit;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
+import de.eberln.gdp.uebung.streams.RandomIntWriter;
 import de.eberln.gdp.vorlagen.GenericArray;
+import de.eberln.gdp.vorlesung.bookexample.Book;
+import de.eberln.gdp.vorlesung.bookexample.DVD;
+import de.eberln.gdp.vorlesung.methodenundfunktionen.Uebungen;
 
 public class Main {
 
@@ -43,13 +47,70 @@ public class Main {
 //		System.out.println(Arrays.toString(nullstellenRechner.nullstellenBerechnen(0, 0, 5)));	
 		
 //		GrossesEinmaleins.printGrossesEinmaleins();
-		//System.out.println(new Wurzelrechnung().sqrt(81, 100));
+//		System.out.println(new Wurzelrechnung().sqrt(81, 100));
+//		
+//		TerminAufgabe terminAufgabe = new TerminAufgabe("Hallo", "ihr Wixer", Prioritaet.DRINGEND, new DatumZeit());
+//		String[] s = new String[]{"a", "b", "c"};
+//		String[] b = GenericArray.appendToArray(s, "d");
+//		b = GenericArray.appendToArray(b, "dsigsf");
+//		System.out.println(Arrays.toString(b));
 		
-		//TerminAufgabe terminAufgabe = new TerminAufgabe("Hallo", "ihr Wixer", Prioritaet.DRINGEND, new DatumZeit());
-		String[] s = new String[]{"a", "b", "c"};
-		String[] b = GenericArray.appendToArray(s, "d");
-		b = GenericArray.appendToArray(b, "dsigsf");
-		System.out.println(Arrays.toString(b));
+		//Uebungen u = new Uebungen();
+		
+		//System.out.println(u.iterations(5));
+		
+		
+		
+		
+		
+		
+		//DVD dvd = new DVD("Avatar", 120, 5);
+		
+		//System.out.println(dvd.toString());
+		
+		RandomIntWriter writer = new RandomIntWriter();
+		
+		writer.writeIntsToFile("files/random_ints.txt");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+			
+		
 	}
 	
 }
