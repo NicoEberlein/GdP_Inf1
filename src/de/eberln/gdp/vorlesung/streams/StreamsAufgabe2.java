@@ -1,24 +1,27 @@
-package de.eberln.gdp.uebung.streams;
+package de.eberln.gdp.vorlesung.streams;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
+import java.util.Scanner;
 
-public class RandomIntWriter {
+public class StreamsAufgabe2 {
 
 	Random random;
 	FileWriter writer;
 	
-	public RandomIntWriter() {
+	public StreamsAufgabe2(long seed) {
 		
-		random = new Random(1);
+		random = new Random(seed);
 		
 	}
 	
 	public void writeIntsToFile(String file) {
 		
 		try {
-			writer = new FileWriter(file, true);
+			writer = new FileWriter(file, false);
 			
 			for(int i = 0; i<100; i++) {
 			
@@ -47,6 +50,39 @@ public class RandomIntWriter {
 			}
 			
 		}
+		
+	}
+	
+	public double calcAverageFromFile(String file) {
+		
+		Scanner scanner = null;
+		
+		double sum = 0;
+		int count = 0;
+		
+		try {
+		
+			scanner = new Scanner(new File(file));
+			
+			while(scanner.hasNextInt()) {
+				sum += scanner.nextInt();
+				count++;
+			}
+			
+			scanner.close();
+			
+		}catch(FileNotFoundException e) {
+			
+		}finally {
+			if(scanner != null) scanner.close();
+		}
+		
+		if(count == 0) {
+			return 0;
+		}else {
+			return sum / count;
+		}
+		
 		
 	}
 	
