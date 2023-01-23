@@ -2,6 +2,11 @@ package de.eberln.gdp;
 
 import java.util.Arrays;
 
+import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe1;
+import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe2;
+import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe3;
+import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe4;
+import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe5;
 import de.eberln.gdp.uebung.aufgabenverwaltung.DatumZeit;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
@@ -54,26 +59,40 @@ public class Main {
 //		String[] b = GenericArray.appendToArray(s, "d");
 //		b = GenericArray.appendToArray(b, "dsigsf");
 //		System.out.println(Arrays.toString(b));
+//		
+//		Uebungen u = new Uebungen();
+//		
+//		System.out.println(u.iterations(5));
+//		
+//		DVD dvd = new DVD("Avatar", 120, 5);
+//		
+//		System.out.println(dvd.toString());
+//		
+//		RandomIntWriter writer = new RandomIntWriter();
+//		writer.writeIntsToFile("files/random_ints.txt");
 		
-		//Uebungen u = new Uebungen();
+		Aufgabe2 aufgabe2 = new Aufgabe2();
+		Aufgabe1 aufgabe1 = new Aufgabe1();
 		
-		//System.out.println(u.iterations(5));
+		int[] arr = new int[] {1, 6, 0, 1, 1, 5, 0, 4, 1, 30, 8, 1, 0, 9};
 		
+		int[] arr2 = new int[] {0, 23, 10, 600, 2};
 		
+		//System.out.println(aufgabe2.recCount(arr, 2));
+		//System.out.println(aufgabe1.getTop10(arr, arr2));
 		
+		Aufgabe3 aufgabe3 = new Aufgabe3();
+		System.out.println(aufgabe3.reverseString("abcdefg"));
 		
+		Integer a = 2345;
 		
+		Aufgabe4 aufgabe4 = new Aufgabe4();
 		
-		//DVD dvd = new DVD("Avatar", 120, 5);
+		//System.out.println(aufgabe4.count42(45411042));
 		
-		//System.out.println(dvd.toString());
+		Aufgabe5 aufgabe5 = new Aufgabe5();
 		
-		RandomIntWriter writer = new RandomIntWriter();
-		
-		writer.writeIntsToFile("files/random_ints.txt");
-		
-		
-		
+		aufgabe5.printFibo(300);
 		
 		
 		
