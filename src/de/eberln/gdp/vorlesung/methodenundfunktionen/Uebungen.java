@@ -1,7 +1,5 @@
 package de.eberln.gdp.vorlesung.methodenundfunktionen;
 
-import java.util.ArrayList;
-
 public class Uebungen {
 	
 	public int count(int[] a, int n) {
