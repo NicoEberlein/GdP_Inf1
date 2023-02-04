@@ -10,11 +10,12 @@ import de.eberln.gdp.klausurvorbereitung.stoehrss2013.Aufgabe5;
 import de.eberln.gdp.uebung.aufgabenverwaltung.DatumZeit;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe;
 import de.eberln.gdp.uebung.aufgabenverwaltung.TerminAufgabe.Prioritaet;
-import de.eberln.gdp.uebung.streams.RandomIntWriter;
 import de.eberln.gdp.vorlagen.GenericArray;
 import de.eberln.gdp.vorlesung.bookexample.Book;
 import de.eberln.gdp.vorlesung.bookexample.DVD;
-import de.eberln.gdp.vorlesung.methodenundfunktionen.Uebungen;
+import de.eberln.gdp.vorlesung.uebungsaufgaben.uebungsblatt1.Uebungen;
+import de.eberln.gdp.vorlesung.uebungsaufgaben.uebungsblatt2.Lecture;
+import de.eberln.gdp.vorlesung.uebungsaufgaben.uebungsblatt2.StreamsAufgabe2;
 
 public class Main {
 
@@ -76,57 +77,7 @@ public class Main {
 		
 		int[] arr = new int[] {1, 6, 0, 1, 1, 5, 0, 4, 1, 30, 8, 1, 0, 9};
 		
-		int[] arr2 = new int[] {0, 23, 10, 600, 2};
-		
-		//System.out.println(aufgabe2.recCount(arr, 2));
-		//System.out.println(aufgabe1.getTop10(arr, arr2));
-		
-		Aufgabe3 aufgabe3 = new Aufgabe3();
-		System.out.println(aufgabe3.reverseString("abcdefg"));
-		
-		Integer a = 2345;
-		
-		Aufgabe4 aufgabe4 = new Aufgabe4();
-		
-		//System.out.println(aufgabe4.count42(45411042));
-		
-		Aufgabe5 aufgabe5 = new Aufgabe5();
-		
-		aufgabe5.printFibo(300);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		int[] arr2 = new int[] {0, 23, 10, 600, 2};		
 
 			
 		

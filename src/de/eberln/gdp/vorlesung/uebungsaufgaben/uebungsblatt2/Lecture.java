@@ -1,4 +1,4 @@
-package de.eberln.gdp.vorlesung.streams;
+package de.eberln.gdp.vorlesung.uebungsaufgaben.uebungsblatt2;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

@@ -1,4 +1,4 @@
-package de.eberln.gdp.vorlesung.methodenundfunktionen;
+package de.eberln.gdp.vorlesung.uebungsaufgaben.uebungsblatt1;
 
 public class Uebungen {
 	
